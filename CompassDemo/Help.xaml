@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="CompassDemo.Help"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CompassDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+	<Page.Background>
+		<ImageBrush Stretch="Fill" ImageSource="background.jpg"/>
+	</Page.Background>
+
+        <Hub Header="帮助">
+            <!--1-->
+            <HubSection Header="校准">
+                <DataTemplate>
+                    <StackPanel>
+                        <Image HorizontalAlignment="Center" Height="211" VerticalAlignment="Top" Width="352" Source="calibrate.png" Margin="0,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" FontSize="21">
+                    <LineBreak/>举起手机，按照8字路线扫过。请持续移动直到精度显示为“高”。<LineBreak/>
+                    <LineBreak/>请点击返回，到罗盘页面开始校准。
+                    </TextBlock>
+                    
+                </StackPanel>
+                </DataTemplate>
+            </HubSection>
+            <!--2-->
+            <HubSection Header="显示界面">
+                <DataTemplate>
+                    <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Capture.png" Margin="22,0,16.833,0" Height="474" Width="302"/>
+                </DataTemplate>
+            </HubSection>
+            <!--3-->
+            <HubSection Header="开发者">
+                <DataTemplate>
+                    <StackPanel>
+                    <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top"
+                       FontSize="21">
+                <LineBreak/>Mukosame
+                <LineBreak/>
+                    </TextBlock>
+
+                    <Button Content="给我发邮件" HorizontalAlignment="Center" Width="250" Click="email"/>
+                    <Button Content="看看我的其他应用" HorizontalAlignment="Center"  Width="250" Click="otherapp"/>
+                </StackPanel>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+ 
+</Page>
