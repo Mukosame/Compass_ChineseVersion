@@ -112,6 +112,7 @@
     <Content Include="calibrate.png" />
     <Content Include="Capture.PNG" />
     <None Include="Package.StoreAssociation.xml" />
+    <Content Include="SplashScreen.jpg" />
     <Content Include="starpointer.png" />
     <Content Include="sun2.png" />
     <Content Include="s_compass.png" />

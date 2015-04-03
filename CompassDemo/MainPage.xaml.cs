@@ -102,11 +102,11 @@ namespace CompassDemo
                 else
                     ReciprocalHeading = TrueHeading + 180;
                 CompassFace.RenderTransformOrigin = new Point(0.5, 0.5);
-                EllipseGlass.RenderTransformOrigin = new Point(0.5, 0.5);
+                //EllipseGlass.RenderTransformOrigin = new Point(0.5, 0.5);
                 RotateTransform transform = new RotateTransform();
                 transform.Angle = 360 - TrueHeading;
                 CompassFace.RenderTransform = transform;
-                EllipseGlass.RenderTransform = transform;
+               // EllipseGlass.RenderTransform = transform;
             });
         }
 

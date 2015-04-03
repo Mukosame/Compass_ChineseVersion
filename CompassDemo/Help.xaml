@@ -6,45 +6,64 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-	<Page.Background>
-		<ImageBrush Stretch="Fill" ImageSource="background.jpg"/>
-	</Page.Background>
+    <Page.Background>
+        <ImageBrush Stretch="Fill" ImageSource="SplashScreen.jpg"/>
+    </Page.Background>
 
-        <Hub Header="帮助">
-            <!--1-->
-            <HubSection Header="校准">
-                <DataTemplate>
-                    <StackPanel>
-                        <Image HorizontalAlignment="Center" Height="211" VerticalAlignment="Top" Width="352" Source="calibrate.png" Margin="0,0,0,0"/>
+    <Hub Header="帮助" Foreground="#FFC8C7CC">
+        <!--1-->
+        <HubSection Header="校准" Foreground="#FFC8C7CC">
+            <DataTemplate>
+                <StackPanel Margin="0,0,0,0">
+                    <Image HorizontalAlignment="Center" Height="211" VerticalAlignment="Top" Width="352" Source="calibrate.png" Margin="0,0,0,0"/>
                     <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" FontSize="21">
-                    <LineBreak/>举起手机，按照8字路线扫过。请持续移动直到精度显示为“高”。<LineBreak/>
+                    <LineBreak/><LineBreak/>举起手机，按照8字路线扫过。请持续移动直到精度显示为“高”。<LineBreak/>
                     <LineBreak/>请点击返回，到罗盘页面开始校准。
                     </TextBlock>
-                    
+
                 </StackPanel>
-                </DataTemplate>
-            </HubSection>
-            <!--2-->
-            <HubSection Header="显示界面">
-                <DataTemplate>
-                    <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Capture.png" Margin="22,0,16.833,0" Height="474" Width="302"/>
-                </DataTemplate>
-            </HubSection>
-            <!--3-->
-            <HubSection Header="开发者">
-                <DataTemplate>
-                    <StackPanel>
+            </DataTemplate>
+        </HubSection>
+        <!--2-->
+        <HubSection Header="显示界面" Foreground="#FFC8C7CC">
+            <DataTemplate>
+                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Capture.png" Margin="0,0,0,30" />
+            </DataTemplate>
+        </HubSection>
+        <!--3-->
+        <HubSection Header="开发者" Foreground="#FFC8C7CC">
+            <DataTemplate>
+                <StackPanel>
                     <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top"
                        FontSize="21">
                 <LineBreak/>Mukosame
                 <LineBreak/>
                     </TextBlock>
-
-                    <Button Content="给我发邮件" HorizontalAlignment="Center" Width="250" Click="email"/>
-                    <Button Content="看看我的其他应用" HorizontalAlignment="Center"  Width="250" Click="otherapp"/>
+                    <Grid Margin="0,10,0,40" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Button Grid.Row="0" Content="给我发邮件"  HorizontalAlignment="Center" Width="250" Height="100" Click="email" VerticalAlignment="Stretch" BorderBrush="{x:Null}" FontSize="26.667" FontFamily="Microsoft MHei" Foreground="#FFC8C7CC">
+                        	<Button.Background>
+                        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        			<GradientStop Color="Black"/>
+                        			<GradientStop Color="#FF131A40" Offset="1"/>
+                        		</LinearGradientBrush>
+                        	</Button.Background>
+                        </Button>
+                        <Button Grid.Row="1" Content="我的其他应用"  HorizontalAlignment="Center"  Width="250" Height="100" Click="otherapp" VerticalAlignment="Stretch" BorderBrush="{x:Null}" FontSize="26.667" FontFamily="Microsoft MHei" Foreground="#FFC8C7CC">
+                        	<Button.Background>
+                        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        			<GradientStop Color="#FF030408" Offset="1"/>
+                        			<GradientStop Color="#FF131A40"/>
+                        		</LinearGradientBrush>
+                        	</Button.Background>
+                        </Button>
+                    </Grid>
                 </StackPanel>
-                </DataTemplate>
-            </HubSection>
-        </Hub>
- 
+            </DataTemplate>
+        </HubSection>
+    </Hub>
+
 </Page>
