@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Background>
-        <ImageBrush Stretch="Fill" ImageSource="SplashScreen.jpg"/>
+        <SolidColorBrush Color="#FF070E13" />
     </Page.Background>
 
     <Hub Header="帮助" Foreground="#FFC8C7CC">
@@ -18,7 +18,7 @@
                     <Image HorizontalAlignment="Center" Height="211" VerticalAlignment="Top" Width="352" Source="calibrate.png" Margin="0,0,0,0"/>
                     <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" FontSize="21">
                     <LineBreak/><LineBreak/>举起手机，按照8字路线扫过。请持续移动直到精度显示为“高”。<LineBreak/>
-                    <LineBreak/>请点击返回，到罗盘页面开始校准。
+                    <LineBreak/>请点击返回，到主页面开始校准。
                     </TextBlock>
 
                 </StackPanel>
@@ -27,7 +27,7 @@
         <!--2-->
         <HubSection Header="显示界面" Foreground="#FFC8C7CC">
             <DataTemplate>
-                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Capture.png" Margin="0,0,0,30" />
+                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Capture.jpg" Margin="0,0,0,30" />
             </DataTemplate>
         </HubSection>
         <!--3-->
@@ -44,21 +44,11 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Button Grid.Row="0" Content="给我发邮件"  HorizontalAlignment="Center" Width="250" Height="100" Click="email" VerticalAlignment="Stretch" BorderBrush="{x:Null}" FontSize="26.667" FontFamily="Microsoft MHei" Foreground="#FFC8C7CC">
-                        	<Button.Background>
-                        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        			<GradientStop Color="Black"/>
-                        			<GradientStop Color="#FF131A40" Offset="1"/>
-                        		</LinearGradientBrush>
-                        	</Button.Background>
+                        <Button Grid.Row="0" Content="给我发邮件"  HorizontalAlignment="Center" Width="250" Height="100" Click="email" VerticalAlignment="Stretch" BorderBrush="White" FontSize="26.667" FontFamily="Microsoft MHei" Foreground="#FFC8C7CC" BorderThickness="1">
+
                         </Button>
-                        <Button Grid.Row="1" Content="我的其他应用"  HorizontalAlignment="Center"  Width="250" Height="100" Click="otherapp" VerticalAlignment="Stretch" BorderBrush="{x:Null}" FontSize="26.667" FontFamily="Microsoft MHei" Foreground="#FFC8C7CC">
-                        	<Button.Background>
-                        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        			<GradientStop Color="#FF030408" Offset="1"/>
-                        			<GradientStop Color="#FF131A40"/>
-                        		</LinearGradientBrush>
-                        	</Button.Background>
+                        <Button Grid.Row="1" Content="我的其他应用"  HorizontalAlignment="Center"  Width="250" Height="100" Click="otherapp" VerticalAlignment="Stretch" BorderThickness="1" FontSize="26.667" FontFamily="Microsoft MHei" Foreground="#FFC8C7CC">
+
                         </Button>
                     </Grid>
                 </StackPanel>

@@ -85,9 +85,11 @@ namespace CompassDemo
             {
                 CompassReading reading = args.Reading;
                 magneticNorth.Text = String.Format("{0,5:0.00}°\n精度: \n", reading.HeadingMagneticNorth);
+                //magneticNorth.Text = "磁极北\n精度: \n";
                 if (reading.HeadingTrueNorth != null)
                 {
                     trueNorth.Text = String.Format("{0,5:0}°", reading.HeadingTrueNorth);
+                   // trueNorth.Text = "真北方";
                 }
                 else
                 {

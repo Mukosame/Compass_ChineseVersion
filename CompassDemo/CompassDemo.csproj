@@ -110,8 +110,8 @@
     <Content Include="Assets\WideLogo.scale-240.png" />
     <Content Include="background.jpg" />
     <Content Include="calibrate.png" />
-    <Content Include="Capture.PNG" />
     <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Capture.jpg" />
     <Content Include="SplashScreen.jpg" />
     <Content Include="starpointer.png" />
     <Content Include="StoreManifest.xml" />
