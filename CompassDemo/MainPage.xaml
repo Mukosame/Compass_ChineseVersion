@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Windows.UI.Xaml.Controls"
     mc:Ignorable="d"
-    FontSize="20">
+    FontSize="20" Foreground="#FFC8C7CC" FontFamily="Assets/Helvetica LT 25 Ultra Light.ttf#HelveticaNeue LT 25 UltLight">
     <Page.BottomAppBar>
         <CommandBar ClosedDisplayMode="Minimal" Background="Transparent">
             <AppBarButton Label="喜欢" Icon="Like" Click="LikeButton_Click"/>
@@ -23,7 +23,7 @@
 
     <Grid x:Name="LayoutRoot" >
 
-        <StackPanel Margin="12,50,12,0">
+        <StackPanel Margin="12,0,12,0">
             <!--指南针罗盘UI-->
 
 
@@ -43,14 +43,16 @@
                 </Ellipse>
             </Grid>
             <!--精度和角度显示-->
-            <Grid Height="90" Margin="40,20,0,0">
+            <Grid Height="90" Margin="50,20,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock  x:Name="trueNorth" Foreground="#FFC8C7CC"  Grid.Column="0" FontSize="67" HorizontalAlignment="Right" FontFamily="Assets/Helvetica LT 25 Ultra Light.ttf#HelveticaNeue LT 25 UltLight" FontWeight="Bold"/>
-                <TextBlock x:Name="magneticNorth" Grid.Column="1" Foreground="#FFC8C7CC" FontFamily="Assets/Helvetica LT 25 Ultra Light.ttf#HelveticaNeue LT 25 UltLight" FontSize="17" />
+                <TextBlock Text="" x:Name="trueNorth"  Grid.Column="0" FontSize="77" HorizontalAlignment="Right" FontFamily="Assets/Helvetica LT 25 Ultra Light.ttf#HelveticaNeue LT 25 UltLight" FontWeight="Bold"/>
+                <TextBlock x:Name="magneticNorth" Grid.Column="1" FontFamily="Assets/Helvetica LT 25 Ultra Light.ttf#HelveticaNeue LT 25 UltLight" FontSize="20" />
             </Grid>
+            
+                <TextBlock Margin="0,40,0,0" HorizontalAlignment="Center" x:Name="GPS" Text="位置加载中..." Foreground="White"/>
 
         </StackPanel>
         <!--TextBlock  x:Name="headingAccuracy" Foreground="#FFC8C7CC" FontFamily="Assets/Helvetica LT 45 Light.ttf#HelveticaNeue LT 45 Light" HorizontalAlignment="Center"/-->

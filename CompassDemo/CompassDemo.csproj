@@ -114,6 +114,7 @@
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="SplashScreen.jpg" />
     <Content Include="starpointer.png" />
+    <Content Include="StoreManifest.xml" />
     <Content Include="sun2.png" />
     <Content Include="s_compass.png" />
   </ItemGroup>

@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 //using Windows.UI.Xaml.Media.Imaging;
 using Windows.ApplicationModel;
+using Windows.Devices.Geolocation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
@@ -29,15 +30,19 @@ namespace CompassDemo
     /// </summary>
     public sealed partial class MainPage : Page
     {
-
         Compass compass;
         String appversion = GetAppVersion();
         private ApplicationDataContainer localSettings;
+        Geolocator gpswatcher = new Geolocator()
+        {
+            MovementThreshold = 20
+        };
 
         public MainPage()
         {
             InitializeComponent();
             Loaded += MainPage_Loaded;
+
            // String value=localSettings.Values["initSetting"].ToString();
             localSettings = ApplicationData.Current.LocalSettings;
         }
@@ -48,12 +53,22 @@ namespace CompassDemo
             if (localSettings.Values.ContainsKey("ok"))
             {
                 compass = Compass.GetDefault();
+                gpswatcher.DesiredAccuracy = PositionAccuracy.High;
+
                 if (compass == null)
                 {
                     await new MessageDialog("您的设备不支持罗盘传感器").ShowAsync();
                     return;
                 }
                 compass.ReadingChanged += compass_ReadingChanged;
+
+                if (gpswatcher==null)
+                {
+                    await new MessageDialog("您的设备不支持GPS装置").ShowAsync();
+                    return;
+                }
+                gpswatcher.PositionChanged += gpswatcherPositionChanged;
+                gpswatcher.StatusChanged += gpswatcherStatusChanged;
             }
 
             else
@@ -61,6 +76,7 @@ namespace CompassDemo
                 localSettings.Values["ok"] = "ok";
                 Frame.Navigate(typeof(Help),appversion);
             }
+
         }
 
         private async void compass_ReadingChanged(Compass sender, CompassReadingChangedEventArgs args)
@@ -106,10 +122,60 @@ namespace CompassDemo
                 RotateTransform transform = new RotateTransform();
                 transform.Angle = 360 - TrueHeading;
                 CompassFace.RenderTransform = transform;
-               // EllipseGlass.RenderTransform = transform;
+                // EllipseGlass.RenderTransform = transform;
             });
         }
 
+        async void gpswatcherPositionChanged(Geolocator sender, PositionChangedEventArgs e)
+        {
+            await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                ShowData();
+            });       
+        }
+
+        async void ShowData()
+        {
+            try
+            {
+                Geoposition pos = await gpswatcher.GetGeopositionAsync();
+                string Latitude = String.Format("{0,5:0.00}°:", pos.Coordinate.Point.Position.Latitude);
+                string Longitude = String.Format("{0,5:0.00}°:", pos.Coordinate.Point.Position.Longitude);
+                if (Latitude.StartsWith ("-"))
+                { Latitude = "南" + Latitude.Substring(1); }
+                else
+                { Latitude = "北" + Latitude; }
+                if (Longitude.StartsWith("-"))
+                { Longitude = "西" + Longitude.Substring(1); }
+                else
+                { Longitude = "东" + Longitude; }
+                GPS.Text = Latitude+" "+ Longitude;
+            }
+            catch (System.UnauthorizedAccessException)
+            {
+                GPS.Text = "无数据";
+            }
+        }
+
+        private void gpswatcherStatusChanged(Geolocator sender, StatusChangedEventArgs e)
+        {
+            switch (e.Status)
+            {
+                case PositionStatus.Disabled:
+                    //location is unsupported on this device
+                    GPS.Text = "请手动开启定位设置";
+                    break;
+                case PositionStatus.NoData:
+                    // data unavailable
+                    GPS.Text = "无数据";
+                    break;
+                case PositionStatus.NotAvailable:
+                    GPS.Text = "您的设备不支持GPS装置";
+                    break;
+                default:
+                    break;
+            }
+        }
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.

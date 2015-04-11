@@ -102,7 +102,7 @@ namespace CompassDemo
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             this.navigationHelper.OnNavigatedTo(e);
-            appversion = e.Parameter.ToString();
+            appversion = "罗盘星空" + e.Parameter.ToString();
             //Version.Text = "Compass" + e.Parameter.ToString();
         }
 
