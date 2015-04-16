@@ -52,7 +52,7 @@
                 <TextBlock x:Name="magneticNorth" Grid.Column="1" FontFamily="Assets/Helvetica LT 25 Ultra Light.ttf#HelveticaNeue LT 25 UltLight" FontSize="20" />
             </Grid>
             
-                <TextBlock Margin="0,20,0,0" HorizontalAlignment="Center" x:Name="GPS" Text="位置加载中..." Foreground="White" FontWeight="Bold"/>
+                <TextBlock Margin="0,20,0,0" HorizontalAlignment="Center" x:Name="GPS" Text="..." FontWeight="Bold"/>
 
         </StackPanel>
         <!--TextBlock  x:Name="headingAccuracy" Foreground="#FFC8C7CC" FontFamily="Assets/Helvetica LT 45 Light.ttf#HelveticaNeue LT 45 Light" HorizontalAlignment="Center"/-->

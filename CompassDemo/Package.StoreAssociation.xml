@@ -198,13 +198,14 @@
     <MainPackageIdentityName>31979Mukosame.CompassStellaris</MainPackageIdentityName>
     <MainPackageIdentityName>31979Mukosame.173590CC2FC62</MainPackageIdentityName>
     <MainPackageIdentityName>31979Mukosame.42999BF01CF6F</MainPackageIdentityName>
+    <MainPackageIdentityName>31979Mukosame.120910FAAB4BF</MainPackageIdentityName>
     <MainPackageIdentityName>31979Mukosame.3964932761704</MainPackageIdentityName>
   </AccountPackageIdentityNames>
   <PackageInfoList LandingUrl="https://dev.windowsphone.com/AppSubmission/AssociationLanding?windowsProductId=84420bbf-f708-497b-9096-e352c913cd9a">
     <PackageInfo>
       <OsMinVersion>6.3.0.0</OsMinVersion>
       <PackageArchitecture>neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.2</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.3</PackageMaxArchitectureVersion>
     </PackageInfo>
   </PackageInfoList>
 </StoreAssociation>
