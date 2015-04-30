@@ -10,29 +10,30 @@
         <SolidColorBrush Color="#FF070E13" />
     </Page.Background>
 
-    <Hub Header="帮助" Foreground="#FFC8C7CC">
+    <Pivot  Foreground="#FFC8C7CC">
         <!--1-->
-        <HubSection Header="校准" Foreground="#FFC8C7CC" >
-            <DataTemplate>
+        <PivotItem Header="校准" Foreground="#FFC8C7CC" >
+            
                 <StackPanel Margin="0,0,0,0">
                     <Image HorizontalAlignment="Center" Height="211" VerticalAlignment="Top" Width="352" Source="calibrate.png" Margin="0,0,0,0"/>
                     <TextBlock HorizontalAlignment="Center"  TextWrapping="Wrap" FontSize="21">
                     <LineBreak/><LineBreak/>举起手机，按照8字路线扫过。请持续移动直到精度显示为“高”。<LineBreak/>
-                    <LineBreak/>请点击返回，到主页面开始校准。
+                    <LineBreak/>请按下返回键，到主页面开始校准。
+                    <LineBreak/><LineBreak/>地球所在的方向即为北方。
                     </TextBlock>
 
                 </StackPanel>
-            </DataTemplate>
-        </HubSection>
+            
+        </PivotItem>
         <!--2-->
-        <HubSection Header="显示界面" Foreground="#FFC8C7CC">
-            <DataTemplate>
+        <PivotItem Header="界面说明" Foreground="#FFC8C7CC">
+
                 <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Capture.jpg" Margin="0,0,0,30" />
-            </DataTemplate>
-        </HubSection>
+
+        </PivotItem>
         <!--3-->
-        <HubSection Header="开发者" Foreground="#FFC8C7CC">
-            <DataTemplate>
+        <PivotItem Header="开发者" Foreground="#FFC8C7CC">
+           
                 <StackPanel>
                     <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top"
                        FontSize="21">
@@ -52,8 +53,8 @@
                         </Button>
                     </Grid>
                 </StackPanel>
-            </DataTemplate>
-        </HubSection>
-    </Hub>
+            
+        </PivotItem>
+    </Pivot>
 
 </Page>

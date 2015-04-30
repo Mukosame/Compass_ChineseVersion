@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="31979Mukosame.42957904A425E" Publisher="CN=A51910E1-01F8-4697-9ECA-36EDA9D77739" Version="1.1.0.4" />
+  <Identity Name="31979Mukosame.42957904A425E" Publisher="CN=A51910E1-01F8-4697-9ECA-36EDA9D77739" Version="1.1.0.6" />
   <mp:PhoneIdentity PhoneProductId="13824d80-bbdd-4258-a86e-58544d0a25b5" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>罗盘星空</DisplayName>
