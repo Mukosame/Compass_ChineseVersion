@@ -114,6 +114,23 @@ namespace CompassDemo
         #endregion
 
         #region Appemail
+        /*
+        private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,string messageBody)
+        {
+            var emailMessage = new Windows.ApplicationModel.Email.EmailMessage();
+            emailMessage.Body = messageBody;
+
+            var email = recipient.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>();
+            if (email != null)
+            {
+                var emailRecipient = new Windows.ApplicationModel.Email.EmailRecipient(email.Address);
+                emailMessage.To.Add(emailRecipient);
+            }
+
+            await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(emailMessage);
+
+        }
+        */
         async void email(object sender, RoutedEventArgs e)
         {
 
@@ -125,9 +142,8 @@ namespace CompassDemo
             Windows.ApplicationModel.Email.EmailMessage mail = new Windows.ApplicationModel.Email.EmailMessage();
             mail.Subject = "[WP8.1]反馈" + appversion;
             mail.Body = "\n\n\n生产厂商：" + Manufacturer + "\n系统名：" + SystemProductName + "\nOS版本：" + OSVersion;
-            mail.To.Add(new Windows.ApplicationModel.Email.EmailRecipient("mukosame@gmail.com", "Mukosame"));
+            mail.To.Add(new Windows.ApplicationModel.Email.EmailRecipient("heraxiang@foxmail.com", "Mukosame"));
             await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(mail);
-
         }
 
         /*
